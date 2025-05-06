@@ -20,9 +20,11 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
     int boardheight;
     int tilesize = 25;
 
+    //snake
     Tile snakehead;
     ArrayList<Tile> snakeBody;
 
+    //food
     Tile food;
     Random random;
 
