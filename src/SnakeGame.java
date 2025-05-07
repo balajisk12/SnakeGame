@@ -34,6 +34,11 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
 
     boolean gameover = false;
 
+    public void placefood() {
+        food.x = random.nextInt(boardwidth / tilesize);
+        food.y = random.nextInt(boardheight / tilesize);
+    }
+    
     SnakeGame(int boardwidth, int boardheight) {
         this.boardwidth = boardwidth;
         this.boardheight = boardheight;
@@ -49,6 +54,8 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
         food = new Tile(10, 10);
         random = new Random();
 
+        placefood();
+        
         velocityx = 0;
         velocityy = 0;
     }
