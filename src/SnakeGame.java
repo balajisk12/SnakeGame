@@ -59,6 +59,34 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
         velocityx = 0;
         velocityy = 0;
     }
+
+    @Override
+public void paintComponent(Graphics g) {
+    super.paintComponent(g);
+    draw(g);
+}
+
+public void draw(Graphics g) {
+    // Draw grid lines
+    for (int i = 0; i < boardwidth / tilesize; i++) {
+        g.drawLine(i * tilesize, 0, i * tilesize, boardheight); // vertical lines
+        g.drawLine(0, i * tilesize, boardwidth, i * tilesize);  // horizontal lines
+    }
+
+  
+    g.setColor(Color.red);
+    g.fill3DRect(food.x * tilesize, food.y * tilesize, tilesize, tilesize, true);
+
+   
+    g.setColor(Color.green);
+    g.fill3DRect(snakehead.x * tilesize, snakehead.y * tilesize, tilesize, tilesize, true);
+
+   
+    for (Tile snakepart : snakeBody) {
+        g.fill3DRect(snakepart.x * tilesize, snakepart.y * tilesize, tilesize, tilesize, true);
+    }
+}
+
 }
 
 
