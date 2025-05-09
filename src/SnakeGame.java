@@ -82,6 +82,15 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
     for (Tile snakepart : snakeBody) {
         g.fill3DRect(snakepart.x * tilesize, snakepart.y * tilesize, tilesize, tilesize, true);
     }
+
+    g.setFont(new Font("arial", Font.PLAIN, 16));
+    if (gameover) {
+        g.setColor(Color.red);
+        g.drawString("GAME OVER " + snakeBody.size(), tilesize - 16, tilesize);
+    } else {
+        g.setColor(Color.white);
+        g.drawString("Score: " + snakeBody.size(), tilesize - 16, tilesize);
+    }
 }
 
 }
