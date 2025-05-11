@@ -117,6 +117,7 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
             snakepart.y = prevsnakepart.y;
         }
     }
+        
     snakehead.x += velocityx;
     snakehead.y += velocityy;
 }
