@@ -83,7 +83,6 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
         g.fill3DRect(snakepart.x * tilesize, snakepart.y * tilesize, tilesize, tilesize, true);
     }
 
-
     // Draw score or game over message
     g.setFont(new Font("arial", Font.PLAIN, 16));
     if (gameover) {
