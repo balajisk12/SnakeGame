@@ -58,6 +58,9 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
         
         velocityx = 0;
         velocityy = 0;
+
+        gameloop = new Timer(100, this);
+        gameloop.start();
     }
 
     @Override
@@ -121,6 +124,16 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
     snakehead.y += velocityy;
 }
 
+    
+@Override
+public void actionPerformed(ActionEvent e) {
+    move();
+    repaint();
+
+    if (gameover) {
+        gameloop.stop();
+    }
+}
 
 }
 
