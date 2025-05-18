@@ -149,6 +149,28 @@ public void actionPerformed(ActionEvent e) {
     }
 }
 
+@Override
+public void keyPressed(KeyEvent e) {
+    if (e.getKeyCode() == KeyEvent.VK_UP && velocityy != 1) {
+        velocityx = 0;
+        velocityy = -1;
+    } else if (e.getKeyCode() == KeyEvent.VK_DOWN && velocityy != -1) {
+        velocityx = 0;
+        velocityy = 1;
+    } else if (e.getKeyCode() == KeyEvent.VK_LEFT && velocityx != 1) {
+        velocityx = -1;
+        velocityy = 0;
+    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && velocityx != -1) {
+        velocityx = 1;
+        velocityy = 0;
+    }
+}
+@Override
+public void keyTyped(KeyEvent e) {}
+
+@Override
+public void keyReleased(KeyEvent e) {}
+
 }
 
 
