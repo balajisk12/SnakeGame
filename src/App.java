@@ -17,7 +17,7 @@ public class App {
         SnakeGame snakeGame = new SnakeGame(boardwidth, boardheight);
         frame.add(snakeGame);
         frame.pack();
-        snakeGame.requestFocus(); 
+        snakeGame.requestFocus(); // To make respond for click button
 
     }
 }
