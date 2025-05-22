@@ -5,7 +5,8 @@ import java.util.Random; // used to get random x and y values to place our food 
 import javax.swing.*;
 
 
-public class SnakeGame extends JPanel implements ActionListener,KeyListener{
+public class SnakeGame extends JPanel implements ActionListener,KeyListener
+{
     
     private class Tile {  // Private because it should be only accessible by the snake game class
         int x;
@@ -211,4 +212,29 @@ public class SnakeGame extends JPanel implements ActionListener,KeyListener{
 
     @Override
     public void keyReleased(KeyEvent e) {    }
+
+
+    public void resetGame() {
+        // Reset snake head position
+        snakehead = new Tile(5, 5);
+    
+        // Clear snake body
+        snakeBody.clear();
+
+        // Place new food
+        placefood();
+
+        // Reset velocity to zero (no movement)
+        velocityx = 0;
+        velocityy = 0;
+
+        // Reset game over flag
+        gameover = false;
+
+        // Restart the game loop timer if stopped
+        if (!gameloop.isRunning()) {
+            gameloop.start();
+        }
+        repaint();
+    }
 }
